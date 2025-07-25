@@ -5,6 +5,6 @@ export class GameOfLife {
   }
 
   nextGeneration(): string {
-      return "...\n...\n...";
+      return this.board.replace('X', '.');
   }
 }

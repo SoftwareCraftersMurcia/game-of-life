@@ -1,8 +1,15 @@
 import { GameOfLife } from "../src/GameOfLife";
 
 describe("GameOfLifeAcceptanceTest", () => {
-  it("nextGeneration with no life", () => {
+  it("3x3 board nextGeneration with no life", () => {
     const initialBoard = "...\n...\n...";
+    const gameOfLife = new GameOfLife(initialBoard);
+
+    expect(gameOfLife.nextGeneration()).toBe(initialBoard);
+  });
+
+  it("4x4 board nextGeneration with no life", () => {
+    const initialBoard = "....\n....\n....\n....";
     const gameOfLife = new GameOfLife(initialBoard);
 
     expect(gameOfLife.nextGeneration()).toBe(initialBoard);

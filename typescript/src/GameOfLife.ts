@@ -5,8 +5,12 @@ export class GameOfLife {
   }
 
   nextGeneration(): string[][] {
-    this.board[1][1] = this.board[1][0] === "X" && this.board[1][2] === "X" ? "X" : ".";
+    if ((this.board[0][0] === "X" && this.board[0][2] === "X") || (this.board[1][0] === "X" && this.board[1][2] === "X")) {
+      this.board[1][1] = "X";
+    } else {
+      this.board[1][1] = ".";
+    }
 
-      return this.board;
+    return this.board;
   }
 }

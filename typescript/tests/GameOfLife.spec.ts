@@ -71,4 +71,15 @@ describe("GameOfLifeAcceptanceTest", () => {
 
     expect(gameOfLife.nextGeneration()[1][1]).toEqual("X");
   });
+
+  it("a cell with two neighbors survives", () => {
+    const initialBoard = [
+      ["X", ".", "X"],
+      [".", "X", "."],
+      [".", ".", "."]
+    ];
+    const gameOfLife = new GameOfLife(initialBoard);
+
+    expect(gameOfLife.nextGeneration()[1][1]).toEqual("X");
+  });
 });

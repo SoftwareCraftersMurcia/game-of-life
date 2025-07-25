@@ -1,7 +1,7 @@
 export class GameOfLife {
   board: string[][];
-  constructor(board: string) {
-    this.board = board.split("\n").map((row) => row.split(""));
+  constructor(board: string[][]) {
+    this.board = board;
   }
 
   nextGeneration(): string {

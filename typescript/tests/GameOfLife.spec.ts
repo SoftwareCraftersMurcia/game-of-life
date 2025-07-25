@@ -21,9 +21,17 @@ describe("GameOfLifeAcceptanceTest", () => {
     expect(gameOfLife.nextGeneration()).toBe("...\n...\n...");
   });
 
-  it.skip("nextGeneration with cell alive", () => {
-    const gameOfLife = new GameOfLife("...\nXXX\n...");
+  it.skip("nextGeneration acceptance test", () => {
+    const gameOfLife = new GameOfLife(
+      "..X........\n" +
+      "......X.X..\n" +
+      ".......X...\n" +
+      ".XXX.......");
 
-    expect(gameOfLife.nextGeneration()).toBe("...\n.X.\n...");
+    expect(gameOfLife.nextGeneration()).toBe(
+      "...........\n" +
+      ".......X...\n" +
+      ".......X...\n" +
+      "..X........");
   });
 });

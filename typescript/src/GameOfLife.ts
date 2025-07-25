@@ -1,4 +1,4 @@
-export class Example {
+export class GameOfLife {
   method (): boolean {
     return true
   }

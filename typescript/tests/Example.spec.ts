@@ -1,9 +1,9 @@
-import { Example } from '../src/Example'
+import { GameOfLife } from '../src/GameOfLife'
 
-describe('kata-setup', () => {
+describe('GameOfLifeAcceptanceTest', () => {
   it('example test', () => {
-    const example = new Example()
+    const gameOfLife = new GameOfLife()
 
-    expect(example.method()).toBe(true)
+    expect(gameOfLife.method()).toBe(true)
   })
 })

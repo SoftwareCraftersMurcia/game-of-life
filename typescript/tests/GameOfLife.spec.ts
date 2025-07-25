@@ -9,7 +9,11 @@ describe("GameOfLifeAcceptanceTest", () => {
     ];
     const gameOfLife = new GameOfLife(initialBoard);
 
-    expect(gameOfLife.nextGeneration()).toBe("...\n...\n...");
+    expect(gameOfLife.nextGeneration()).toEqual([
+      [".", ".", "."],
+      [".", ".", "."],
+      [".", ".", "."]
+    ]);
   });
 
   it("4x4 board nextGeneration with no life", () => {
@@ -21,7 +25,12 @@ describe("GameOfLifeAcceptanceTest", () => {
     ];
     const gameOfLife = new GameOfLife(initialBoard);
 
-    expect(gameOfLife.nextGeneration()).toBe("....\n....\n....\n....");
+    expect(gameOfLife.nextGeneration()).toEqual([
+      [".", ".", ".", "."],
+      [".", ".", ".", "."],
+      [".", ".", ".", "."],
+      [".", ".", ".", "."]
+    ]);
   });
 
   it("nextGeneration with one cell in the middle dies due to lack of population", () => {
@@ -32,7 +41,11 @@ describe("GameOfLifeAcceptanceTest", () => {
     ];
     const gameOfLife = new GameOfLife(initialBoard);
 
-    expect(gameOfLife.nextGeneration()).toBe("...\n...\n...");
+    expect(gameOfLife.nextGeneration()).toEqual([
+      [".", ".", "."],
+      [".", ".", "."],
+      [".", ".", "."]
+    ]);
   });
 
   it.skip("nextGeneration acceptance test", () => {
@@ -44,9 +57,12 @@ describe("GameOfLifeAcceptanceTest", () => {
     ];
     const gameOfLife = new GameOfLife(initialBoard);
 
-    expect(gameOfLife.nextGeneration()).toBe(
-      "...........\n" + ".......X...\n" + ".......X...\n" + "..X........"
-    );
+    expect(gameOfLife.nextGeneration()).toEqual([
+      [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
+      [".", ".", ".", ".", ".", ".", ".", "X", ".", ".", "."],
+      [".", ".", ".", ".", ".", ".", ".", "X", ".", ".", "."],
+      [".", ".", "X", ".", ".", ".", ".", ".", ".", ".", "."]
+    ]);
   });
 
   it("a cell with two neighbors survives", () => {
@@ -57,6 +73,10 @@ describe("GameOfLifeAcceptanceTest", () => {
     ];
     const gameOfLife = new GameOfLife(initialBoard);
 
-    expect(gameOfLife.nextGeneration()).toBe("...\n.X.\n...");
+    expect(gameOfLife.nextGeneration()).toEqual([
+      [".", ".", "."],
+      [".", "X", "."],
+      [".", ".", "."]
+    ]);
   });
 });

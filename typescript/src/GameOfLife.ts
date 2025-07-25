@@ -4,7 +4,7 @@ export class GameOfLife {
     this.board = board;
   }
 
-  nextGeneration(): string {
+  nextGeneration(): string[][] {
     const middleCell =
       this.board[1][0] === "X" && this.board[1][2] === "X" ? "X" : ".";
 
@@ -13,7 +13,6 @@ export class GameOfLife {
 
       nextBoard[1][1] = middleCell;
 
-      return nextBoard.map(row => row.join(''))
-          .join('\n');
+      return nextBoard;
   }
 }

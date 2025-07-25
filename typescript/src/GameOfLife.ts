@@ -5,15 +5,15 @@ export class GameOfLife {
   }
 
   nextGeneration(): string {
-    const v1 =
+    const middleCell =
       this.board[1][0] === "X" && this.board[1][2] === "X" ? "X" : ".";
 
-      const temp = this.board
+      const nextBoard = this.board
           .map((row) => row.map((cell) => (cell === "X" ? "." : cell)));
 
-      temp[1][1] = v1;
+      nextBoard[1][1] = middleCell;
 
-      return temp.map(row => row.join(''))
+      return nextBoard.map(row => row.join(''))
           .join('\n');
   }
 }

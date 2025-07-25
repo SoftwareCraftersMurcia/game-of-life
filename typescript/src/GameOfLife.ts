@@ -1,5 +1,10 @@
 export class GameOfLife {
-  method (): boolean {
-    return true
+  board: string;
+  constructor(board: string) {
+    this.board = board;
+  }
+
+  nextIteration(): string {
+    return this.board;
   }
 }

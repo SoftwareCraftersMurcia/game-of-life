@@ -1,9 +1,11 @@
-import { GameOfLife } from '../src/GameOfLife'
+import { GameOfLife } from "../src/GameOfLife";
 
-describe('GameOfLifeAcceptanceTest', () => {
-  it('example test', () => {
-    const gameOfLife = new GameOfLife()
+describe("GameOfLifeAcceptanceTest", () => {
+  const initialBoard = "...\n...\n...";
 
-    expect(gameOfLife.method()).toBe(true)
-  })
-})
+  it("nextIteration with no life", () => {
+    const gameOfLife = new GameOfLife(initialBoard);
+
+    expect(gameOfLife.nextIteration()).toBe(initialBoard);
+  });
+});

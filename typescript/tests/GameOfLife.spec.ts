@@ -23,15 +23,17 @@ describe("GameOfLifeAcceptanceTest", () => {
 
   it.skip("nextGeneration acceptance test", () => {
     const gameOfLife = new GameOfLife(
-      "..X........\n" +
-      "......X.X..\n" +
-      ".......X...\n" +
-      ".XXX.......");
+      "..X........\n" + "......X.X..\n" + ".......X...\n" + ".XXX......."
+    );
 
     expect(gameOfLife.nextGeneration()).toBe(
-      "...........\n" +
-      ".......X...\n" +
-      ".......X...\n" +
-      "..X........");
+      "...........\n" + ".......X...\n" + ".......X...\n" + "..X........"
+    );
+  });
+
+  it("a cell with two neighbors survives", () => {
+    const gameOfLife = new GameOfLife("...\nXXX\n...");
+
+    expect(gameOfLife.nextGeneration()).toBe("...\n.X.\n...");
   });
 });

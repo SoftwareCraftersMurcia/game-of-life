@@ -5,14 +5,8 @@ export class GameOfLife {
   }
 
   nextGeneration(): string[][] {
-    const middleCell =
-      this.board[1][0] === "X" && this.board[1][2] === "X" ? "X" : ".";
+    this.board[1][1] = this.board[1][0] === "X" && this.board[1][2] === "X" ? "X" : ".";
 
-      const nextBoard = this.board
-          .map((row) => row.map((cell) => (cell === "X" ? "." : cell)));
-
-      nextBoard[1][1] = middleCell;
-
-      return nextBoard;
+      return this.board;
   }
 }

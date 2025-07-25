@@ -4,7 +4,7 @@ export class GameOfLife {
     this.board = board;
   }
 
-  nextIteration(): string {
+  nextGeneration(): string {
     return this.board;
   }
 }

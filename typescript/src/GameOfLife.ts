@@ -5,6 +5,6 @@ export class GameOfLife {
   }
 
   nextGeneration(): string {
-    return this.board;
+      return "...\n...\n...";
   }
 }

@@ -8,7 +8,7 @@ describe("GameOfLifeAcceptanceTest", () => {
     expect(gameOfLife.nextGeneration()).toBe(initialBoard);
   });
 
-  it("nextGeneration with one cell in the middle", () => {
+  it("nextGeneration with one cell in the middle dies due to lack of population", () => {
     const gameOfLife = new GameOfLife("...\n.X.\n...");
 
     expect(gameOfLife.nextGeneration()).toBe("...\n...\n...");
